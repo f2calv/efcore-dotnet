@@ -1,16 +1,11 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
 {
-  "name": "C# (.NET)",
-  "build": {
-    "dockerfile": "Dockerfile",
-    "args": {
-      // Use the VARIANT arg to pick a Debian OS version: buster, bullseye
-      // Use bullseye when on local on arm64/Apple Silicon.
-      "VARIANT": "8.0-bookworm",
-      "NODE_VERSION": "none"
-    }
-  },
-  // Features to add to the dev container. More info: https://containers.dev/features.
+	"name": "C# (.NET)",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/dotnet:1-8.0-bookworm",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
     // "ghcr.io/devcontainers-contrib/features/pre-commit:2": {},
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}//,
@@ -39,6 +34,19 @@
     // },
     // "ghcr.io/devcontainers-contrib/features/argo-cd:1": {}
   },
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [5000, 5001],
+	// "portsAttributes": {
+	//		"5001": {
+	//			"protocol": "https"
+	//		}
+	// }
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "sh . ./.devcontainer/postCreateCommand.sh",
+  "postStartCommand": "sh . ./.devcontainer/postStartCommand.sh",
+
   // Configure tool-specific properties.
   "customizations": {
     // Configure properties specific to VS Code.
@@ -58,14 +66,11 @@
       ]
     }
   },
+  
   "mounts": [
     "source=${localEnv:HOME}${localEnv:USERPROFILE}/source/github,target=/workspaces,type=bind,consistency=cached"
-  ],
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // "forwardPorts": [],
-  // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "sh . ./.devcontainer/postCreateCommand.sh",
-  "postStartCommand": "sh . ./.devcontainer/postStartCommand.sh",
-  // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-  "remoteUser": "vscode"
+  ]
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
 }
