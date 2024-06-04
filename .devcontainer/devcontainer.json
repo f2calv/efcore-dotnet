@@ -1,0 +1,71 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+{
+  "name": "C# (.NET)",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      // Use the VARIANT arg to pick a Debian OS version: buster, bullseye
+      // Use bullseye when on local on arm64/Apple Silicon.
+      "VARIANT": "8.0-bookworm",
+      "NODE_VERSION": "none"
+    }
+  },
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    // "ghcr.io/devcontainers-contrib/features/pre-commit:2": {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}//,
+    // "ghcr.io/devcontainers/features/azure-cli:1": {},
+    // "ghcr.io/devcontainers/features/github-cli:1": {},
+    // "ghcr.io/devcontainers/features/powershell:1": {},
+    // "ghcr.io/devcontainers/features/terraform:1": {
+    //   "version": "1.6.0",
+    //   "tflint": "0.48.0",
+    //   "terragrunt": "0.53.1"
+    // },
+    // "ghcr.io/dhoeric/features/terraform-docs:1": {
+    //   "version": "latest"
+    // },
+    // "ghcr.io/devcontainers/features/node:1": {
+    //   "version": "lts"
+    // },
+    // "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {
+    //   "jqVersion": "latest",
+    //   "yqVersion": "latest"
+    // },
+    // "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+    //   "version": "latest",
+    //   "helm": "3.11.0",
+    //   "minikube": "none"
+    // },
+    // "ghcr.io/devcontainers-contrib/features/argo-cd:1": {}
+  },
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Set *default* container specific settings.json values on container create.
+      "settings": {},
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "ms-vscode.powershell",
+        "ms-vscode.azurecli",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "mutantdino.resourcemonitor",
+        "usernamehw.errorlens",
+        "davidanson.vscode-markdownlint",
+        "ms-dotnettools.csharp"
+      ]
+    }
+  },
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/source/github,target=/workspaces,type=bind,consistency=cached"
+  ],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "sh . ./.devcontainer/postCreateCommand.sh",
+  "postStartCommand": "sh . ./.devcontainer/postStartCommand.sh",
+  // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "vscode"
+}
