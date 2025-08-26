@@ -1,7 +1,6 @@
-﻿namespace EFCoreLib
-{
-    public class Class1
-    {
+﻿namespace EFCoreLib;
 
-    }
+public class Class1
+{
+
 }
