@@ -5,7 +5,7 @@
     <File Path="Directory.Packages.props" />
   </Folder>
   <Folder Name="/efcore-dotnet/">
-    <Project Path="EFCoreApp/EFCoreApp.csproj" />
-    <Project Path="EFCoreLib/EFCoreLib.csproj" />
+    <Project Path="src/EFCoreApp/EFCoreApp.csproj" />
+    <Project Path="src/EFCoreLib/EFCoreLib.csproj" />
   </Folder>
 </Solution>
