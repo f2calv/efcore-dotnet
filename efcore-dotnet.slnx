@@ -1,4 +1,11 @@
 ﻿<Solution>
-  <Project Path="EFCoreApp/EFCoreApp.csproj" />
-  <Project Path="EFCoreLib/EFCoreLib.csproj" />
+  <Folder Name="/efcore-dotnet/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Folder Name="/efcore-dotnet/">
+    <Project Path="EFCoreApp/EFCoreApp.csproj" />
+    <Project Path="EFCoreLib/EFCoreLib.csproj" />
+  </Folder>
 </Solution>
