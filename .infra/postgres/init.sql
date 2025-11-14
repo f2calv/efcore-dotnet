@@ -55,6 +55,3 @@ COMMENT ON COLUMN public.room.room_name
 
 insert into public.room (room_name, some_string) values ('number 10', 'downing street');
 insert into public.room (room_name, some_string) values ('number 12', 'downing street');
-
-
-
