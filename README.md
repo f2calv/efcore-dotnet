@@ -1,5 +1,7 @@
 # EF Core .NET
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=f2calv_efcore-dotnet&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=f2calv_efcore-dotnet)
+
 This .NET 10 learning repository demonstrates an EF Core SQLite model, generated migration and
 console application based on Microsoft's introductory EF Core tutorial.
 
