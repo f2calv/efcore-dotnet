@@ -1,4 +1,4 @@
-∩╗┐using EFCoreApp;
+﻿using EFCoreApp;
 
 using var db = new BloggingContext();
 
@@ -7,7 +7,7 @@ Console.WriteLine($"Database path: {db.DbPath}.");
 
 // Create
 Console.WriteLine("Inserting a new blog");
-db.Add(new { Url = "http://blogs.msdn.com/adonet" });
+db.Add(new { Url = "https://devblogs.microsoft.com/dotnet" });
 await db.SaveChangesAsync();
 
 // Read
@@ -27,4 +27,3 @@ await db.SaveChangesAsync();
 Console.WriteLine("Delete the blog");
 db.Remove(blog);
 await db.SaveChangesAsync();
-
