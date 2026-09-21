@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EFCoreApp;
 
+/// <summary>Stores the sample blog model in a local SQLite database.</summary>
 public sealed class BloggingContext : DbContext
 {
     public DbSet<Blog> Blogs { get; set; }

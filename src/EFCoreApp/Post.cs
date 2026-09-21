@@ -1,5 +1,6 @@
 namespace EFCoreApp;
 
+/// <summary>Represents a post belonging to a blog.</summary>
 public sealed class Post
 {
     public int PostId { get; set; }
