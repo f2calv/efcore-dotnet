@@ -1,4 +1,6 @@
-﻿using var db = new BloggingContext();
+∩╗┐using EFCoreApp;
+
+using var db = new BloggingContext();
 
 // Note: This sample requires the database to be created before running.
 Console.WriteLine($"Database path: {db.DbPath}.");
@@ -25,3 +27,4 @@ await db.SaveChangesAsync();
 Console.WriteLine("Delete the blog");
 db.Remove(blog);
 await db.SaveChangesAsync();
+
